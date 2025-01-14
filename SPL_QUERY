@@ -43,3 +43,11 @@ index=vk_snow
 | table current_ticket_state
 | eval ticket_state = if(current_ticket_state="Closed" OR current_ticket_state="Resolved", "Completed", "Incomplete")
 
+CASE ----
+
+index=vk_snow 
+| dedup severity 
+| table severity 
+| eval sev = case( severity=1,"Critical", severity=2, "High", severity=3, "normal", 1=1, "Low")
+| sort severity
+
