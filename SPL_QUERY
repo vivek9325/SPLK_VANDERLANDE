@@ -27,3 +27,12 @@ index="_internal"
 | eval kb_concat = kb_round." KB"
 | table kb, kb_round,kb_concat, bytes
 
+Optimized COde ---
+
+index="_internal" 
+```| eval kb = bytes/1024
+| eval kb_round = round(kb,3)
+| eval kb_concat = kb_round." KB"```
+| eval kb_output = round(bytes/1024,2)." KB"
+| table kb_output bytes
+
