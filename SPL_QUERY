@@ -36,3 +36,10 @@ index="_internal"
 | eval kb_output = round(bytes/1024,2)." KB"
 | table kb_output bytes
 
+IF-ELSE Condition -----
+
+index=vk_snow 
+| dedup current_ticket_state
+| table current_ticket_state
+| eval ticket_state = if(current_ticket_state="Closed" OR current_ticket_state="Resolved", "Completed", "Incomplete")
+
