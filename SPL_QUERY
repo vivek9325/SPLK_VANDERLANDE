@@ -1,0 +1,9 @@
+Stats SUM & AVG FILLNULL -----------
+
+
+index="_internal" 
+| table bytes, source, sourcetype
+| stats sum(bytes) as sum_bytes, avg(bytes) as avg_bytes by sourcetype
+| fillnull value="NULL" sum_bytes
+| fillnull  avg_bytes
+| sort  sourcetype
