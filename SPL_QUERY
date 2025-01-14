@@ -7,3 +7,12 @@ index="_internal"
 | fillnull value="NULL" sum_bytes
 | fillnull  avg_bytes
 | sort  sourcetype
+
+
+LIST & VALUES -----
+
+index="_internal" 
+| stats list(source) as source by sourcetype
+
+index="_internal" 
+| stats values(source) as source by sourcetype
