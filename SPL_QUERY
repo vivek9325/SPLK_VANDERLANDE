@@ -56,3 +56,11 @@ Timechart ----
 index=vk_snow 
 |timechart span=1y count by current_ticket_state
 
+Date & Time Function ----
+
+index=vk_snow 
+| table _time, current_ticket_state, time_submitted
+| eval time_submitted_epoc = strptime(time_submitted,"%d-%m-%y %H:%M")
+| eval _time = time_submitted_epoc
+| timechart span=1y count by current_ticket_state
+
