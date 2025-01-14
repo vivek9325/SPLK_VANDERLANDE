@@ -16,3 +16,14 @@ index="_internal"
 
 index="_internal" 
 | stats values(source) as source by sourcetype
+
+
+EVAL - Round, Calculation & Concetination
+
+
+index="_internal" 
+| eval kb = bytes/1024
+| eval kb_round = round(kb,3)
+| eval kb_concat = kb_round." KB"
+| table kb, kb_round,kb_concat, bytes
+
