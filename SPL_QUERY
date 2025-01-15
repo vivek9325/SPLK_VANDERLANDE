@@ -64,3 +64,8 @@ index=vk_snow
 | eval _time = time_submitted_epoc
 | timechart span=1y count by current_ticket_state
 
+index="vk_snow" sourcetype="csv" 
+| table time_submitted 
+| eval time_submitted_epoc = strptime(time_submitted, "%d-%m-%y %H:%M") 
+| eval time_submitted_format = strftime(time_submitted_epoc, "%d-%b-%Y %A")
+
