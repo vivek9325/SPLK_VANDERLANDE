@@ -138,3 +138,8 @@ source="data.txt"  index="vk_snow" sourcetype="vk_txt"
 | rex field=_raw "From:\s+<(?P<from_id>.*)>\s+To" 
 | table from_id
 
+
+| makeresults 
+| eval text = "vk;search;saved_search" 
+| rex field=text "(?P<name>\w+);(?P<app_name>\w+);(?P<savedsearchname>\w+)" 
+| fields - _time
