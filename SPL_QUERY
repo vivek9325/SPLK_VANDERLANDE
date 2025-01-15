@@ -69,3 +69,6 @@ index="vk_snow" sourcetype="csv"
 | eval time_submitted_epoc = strptime(time_submitted, "%d-%m-%y %H:%M") 
 | eval time_submitted_format = strftime(time_submitted_epoc, "%d-%b-%Y %A")
 
+GeoStats ----
+
+index="vk_snow" sourcetype="csv" source="vendors.csv" | geostats latfield=VendorLatitude longfield=VendorLongitude count by VendorCountry
