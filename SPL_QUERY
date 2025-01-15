@@ -107,3 +107,19 @@ index=vk_snow source=Sample_tickets.csv
     | table ticket_number, time_taken]
 
 
+append ---
+
+index=vk_snow source=Sample_tickets.csv 
+| stats count by current_ticket_state 
+| append
+    [ search index=vk_snow source=Sample_lookup.csv 
+    | stats count as total by time_taken]
+
+appendcols ---
+
+index=vk_snow source=Sample_tickets.csv 
+| stats count by current_ticket_state 
+| appendcols 
+    [ search index=vk_snow source=Sample_lookup.csv 
+    | stats count as total by time_taken]
+
