@@ -134,6 +134,10 @@ index="vk_snow" sourcetype="csv" source="Sample_tickets.csv"
 
 Rex ---
 
+URL - https://www.debuggex.com/cheatsheet/regex/pcre
+https://regex101.com/
+
+
 source="data.txt"  index="vk_snow" sourcetype="vk_txt" 
 | rex field=_raw "From:\s+<(?P<from_id>.*)>\s+To" 
 | table from_id
