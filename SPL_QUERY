@@ -72,3 +72,38 @@ index="vk_snow" sourcetype="csv"
 GeoStats ----
 
 index="vk_snow" sourcetype="csv" source="vendors.csv" | geostats latfield=VendorLatitude longfield=VendorLongitude count by VendorCountry
+
+Join ----
+
+Inner ---
+
+index=vk_snow source=Sample_tickets.csv 
+| table ticket_number, severity, current_ticket_state, time_taken 
+| join type=inner ticket_number
+    [ search index=vk_snow source=Sample_lookup.csv ticket_number=INC0000205* 
+    | table ticket_number, time_taken]
+
+index=vk_snow source=Sample_tickets.csv 
+| table ticket_number, severity, current_ticket_state, time_taken 
+| join type=left ticket_number
+    [ search index=vk_snow source=Sample_lookup.csv ticket_number=INC0000205* 
+    | table ticket_number, time_taken]
+
+Overwrite Function ----
+
+index=vk_snow source=Sample_tickets.csv 
+| eval time_taken="NULL" 
+| table ticket_number, severity, current_ticket_state, time_taken 
+| join type=inner ticket_number overwrite=true
+    [ search index=vk_snow source=Sample_lookup.csv ticket_number=INC0000205* 
+    | table ticket_number, time_taken]
+
+
+index=vk_snow source=Sample_tickets.csv 
+| eval time_taken="NULL" 
+| table ticket_number, severity, current_ticket_state, time_taken 
+| join type=left ticket_number overwrite=true
+    [ search index=vk_snow source=Sample_lookup.csv ticket_number=INC0000205* 
+    | table ticket_number, time_taken]
+
+
