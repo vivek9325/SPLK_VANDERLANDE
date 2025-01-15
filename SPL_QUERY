@@ -144,6 +144,13 @@ source="data.txt"  index="vk_snow" sourcetype="vk_txt"
 | rex field=text "(?P<name>\w+);(?P<app_name>\w+);(?P<savedsearchname>\w+)" 
 | fields - _time
 
+AddColtotal & Addtotal ----
+
+index=vk_snow source="Sample_tickets.csv" 
+| chart count by current_ticket_state, severity 
+| addcoltotals label=total labelfield=current_ticket_state 
+| addtotals fieldname=Sum
+
 ==============================================================================================================================
 
 Assignment No - 2 -------------
