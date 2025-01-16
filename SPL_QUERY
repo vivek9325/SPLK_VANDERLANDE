@@ -185,3 +185,10 @@ Spath ----
 
 index="vk_snow" sourcetype="vk_xml" source="test_xml.txt" 
 | spath path=purchases.book.author output=author
+
+
+index="vk_snow" sourcetype="vk_xml" source="test_xml.txt" 
+| spath path=purchases.book.title output=title 
+| spath path=purchases.book.author output=author 
+| spath path=purchases.book.title{@yearPublished} output=yearPublished
+
