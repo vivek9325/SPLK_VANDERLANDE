@@ -173,3 +173,9 @@ credit_card_number
 1415
 
 ============================================================================================================================================
+
+Solution Assignment - 2
+
+| makeresults 
+| eval credit_card_number="1234-5678-9020-1415" 
+| rex field=credit_card_number "(?P<digit>\d{4})" max_match=0
