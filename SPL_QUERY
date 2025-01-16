@@ -194,3 +194,8 @@ index="vk_snow" sourcetype="vk_xml" source="test_xml.txt"
 
 index="vk_snow" sourcetype="vk_xml" source="raw_nyc_phil_mod.json" 
 | spath path=programs{}.concerts{}.Venue output=venue
+
+
+index="vk_snow" sourcetype="vk_xml" source="mixed_json_unstructured.json" 
+| rex field=_raw "xyz-\s+(?P<extracted_json>.*)" 
+| spath input=extracted_json
