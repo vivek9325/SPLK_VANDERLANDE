@@ -192,3 +192,5 @@ index="vk_snow" sourcetype="vk_xml" source="test_xml.txt"
 | spath path=purchases.book.author output=author 
 | spath path=purchases.book.title{@yearPublished} output=yearPublished
 
+index="vk_snow" sourcetype="vk_xml" source="raw_nyc_phil_mod.json" 
+| spath path=programs{}.concerts{}.Venue output=venue
