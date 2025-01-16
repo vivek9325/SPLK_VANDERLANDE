@@ -199,3 +199,17 @@ index="vk_snow" sourcetype="vk_xml" source="raw_nyc_phil_mod.json"
 index="vk_snow" sourcetype="vk_xml" source="mixed_json_unstructured.json" 
 | rex field=_raw "xyz-\s+(?P<extracted_json>.*)" 
 | spath input=extracted_json
+
+
+Search & WHere Commands -----
+
+index=vk_snow source=Sample_tickets.csv 
+| stats count by severity 
+| eval threshold=15 
+| where count>threshold
+
+
+index=vk_snow source=Sample_tickets.csv 
+| stats count by severity 
+|search count>20
+
