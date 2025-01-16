@@ -213,3 +213,18 @@ index=vk_snow source=Sample_tickets.csv
 | stats count by severity 
 |search count>20
 
+===============================================================================================================================
+
+Assignment - 2
+
+Write the Cron Expression ----> Mon to fri, 10AM to 7PM, Every Hour in the month of Jan, March & April
+
+Assignment -3 
+
+API vs Webhook??
+
+Assignment 4 ---
+
+Get the use case to justify the interdependecy between Time range and Schedule in aLERT that might led to false alert.
+
+=================================================================================================================================
