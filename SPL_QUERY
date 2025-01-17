@@ -228,3 +228,15 @@ Assignment 4 ---
 Get the use case to justify the interdependecy between Time range and Schedule in aLERT that might led to false alert.
 
 =================================================================================================================================
+
+Lookup ----
+
+
+|inputlookup vk_sample_lookup.csv
+
+
+
+index=vk_snow source=Sample_tickets.csv 
+| table ticket_number, severity, current_ticket_state 
+| lookup vk_sample_lookup.csv ticket_number OUTPUT time_taken as time_consumed
+
