@@ -240,3 +240,13 @@ index=vk_snow source=Sample_tickets.csv
 | table ticket_number, severity, current_ticket_state 
 | lookup vk_sample_lookup.csv ticket_number OUTPUT time_taken as time_consumed
 
+
+KVStore ----
+
+| makeresults
+| eval id=1, name="Vivek"
+| fields - _time
+| outputlookup vk_kvstore
+
+| inputlookup vk_kvstore
+| eval key = _key
