@@ -281,10 +281,9 @@ C:\Windows\System32>curl -k "https://localhost:8088/services/collector?channel=a
 
 Verify ---
 
-C:\Windows\System32>curl -k "https://localhost:8088/services/collector?channel=ae4d57f8-866f-4276-8dfa-d197c02ce308" -H "Authorization:Splunk 7e42c38b-b8c2-4c37-b4bf-67c503c99ce5" -d "{\"sourcetype\":\"trail123\", \"event\":\"ack events1\"}"
-{"text":"Success","code":0,"ackId":1}
-C:\Windows\System32>curl -k "https://localhost:8088/services/collector?channel=ae4d57f8-866f-4276-8dfa-d197c02ce308" -H "Authorization:Splunk 7e42c38b-b8c2-4c37-b4bf-67c503c99ce5" -d "{\"sourcetype\":\"trail123\", \"event\":\"ack events2\"}"
-{"text":"Success","code":0,"ackId":2}
-C:\Windows\System32>curl -k "https://localhost:8088/services/collector?channel=ae4d57f8-866f-4276-8dfa-d197c02ce308" -H "Authorization:Splunk 7e42c38b-b8c2-4c37-b4bf-67c503c99ce5" -d "{\"sourcetype\":\"trail123\", \"event\":\"ack events3\"}"
-{"text":"Success","code":0,"ackId":3}
+C:\Windows\System32>curl -k "https://localhost:8088/services/collector/ack?channel=ae4d57f8-866f-4276-8dfa-d197c02ce308" -H "Authorization:Splunk 7e42c38b-b8c2-4c37-b4bf-67c503c99ce5" -d "{\"acks\":[0]}"
+{"acks":{"0":true}}
+C:\Windows\System32>curl -k "https://localhost:8088/services/collector/ack?channel=ae4d57f8-866f-4276-8dfa-d197c02ce308" -H "Authorization:Splunk 7e42c38b-b8c2-4c37-b4bf-67c503c99ce5" -d "{\"acks\":[12]}"
+{"acks":{"12":false}}
+C:\Windows\System32>curl -k "https://localhost:8088/services/collector/ack?channel=ae4d57f8-866f-4276-8dfa-d197c02ce308" -H "Authorization:Splunk 7e42c38b-b8c2-4c37-b4bf-67c503c99ce5" -d "{\"acks\":[2]}"
 
