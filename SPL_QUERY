@@ -264,3 +264,7 @@ Assignment - 6 ---
 Calling the savedsearch on the xml dashboard.
 
 ===================================================================================================================================
+
+HEC Token ----
+
+curl -k https://localhost:8088/services/collector -H "Authorization:Splunk 2944d671-b9af-4f3d-ba67-92f6653d03f0" -d "{\"sourcetype\":\"trial\", \"event\":\"hello world\"}"
