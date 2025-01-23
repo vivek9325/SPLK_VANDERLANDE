@@ -10,3 +10,10 @@ UF ----
     8  ll
     9  cat deploymentclient.conf
    10  history
+
+Reload serverclass
+
+    8  ./splunk reload deploy-server
+
+   10  ./splunk reload deploy-server -class vk_sc
+   11  history
