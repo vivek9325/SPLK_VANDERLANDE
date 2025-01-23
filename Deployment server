@@ -1,0 +1,12 @@
+UF ----
+
+    1  cd splunkforwarder/bin/
+    2  clear
+    3  ./splunk set deploy-poll https://40.76.104.123:8089
+    4  cd ..
+    5  cd etc/system/
+    6  ll
+    7  cd local/
+    8  ll
+    9  cat deploymentclient.conf
+   10  history
