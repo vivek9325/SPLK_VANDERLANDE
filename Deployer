@@ -6,4 +6,4 @@ shcluster_label = shcluster1
 
 
 
-./splunk init shcluster-config -auth admin:admin@123 -mgmt_uri https://172.174.106.180:8089 -replication_port 9999 -replication_factor 3 -conf_deploy_fetch_url https://20.51.216.159:8089 secret admin@123 -shcluster_label shcluster1
+./splunk init shcluster-config -auth admin:admin@123 -mgmt_uri https://172.174.106.180:8089 -replication_port 9999 -replication_factor 3 -conf_deploy_fetch_url https://20.51.216.159:8089 -secret admin@123 -shcluster_label shcluster1
