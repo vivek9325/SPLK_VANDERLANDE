@@ -14,3 +14,21 @@ shcluster_label = shcluster1
 
 
 ./splunk bootstrap shcluster-captain -servers_list "https://172.174.106.180:8089,https://74.235.81.41:8089,https://20.55.69.103:8089" -auth admin:admin@123
+
+CLI Commands - 
+
+
+--remove a memeber 
+./splunk remove shcluster-member
+
+--see the cluster status
+
+./splunk show shcluster-status -auth <username>:<password>
+
+--see the member status
+
+./splunk list shcluster-config -auth <username>:<password>
+
+
+Push the app at the deployer - 
+./splunk apply shcluster-bundle -target https://20.55.69.103:8089 -auth admin:admin@123
