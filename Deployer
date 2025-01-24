@@ -1,3 +1,9 @@
 [shclustering]
 pass4SymmKey = $7$HwG7ahd5ABXiDigW+BQVNF3DFY7yY2eSQypJJMdI0A63eVkm7e4sOn8=
 shcluster_label = shcluster1
+
+./splunk init shcluster-config -auth <username>:<password> -mgmt_uri <URI>:<management_port> -replication_port <replication_port> -replication_factor <n> -conf_deploy_fetch_url <URL>:<management_port> -secret <security_key> -shcluster_label <label>
+
+
+
+./splunk init shcluster-config -auth admin:admin@123 -mgmt_uri https://172.174.106.180:8089 -replication_port 9999 -replication_factor 3 -conf_deploy_fetch_url https://20.51.216.159:8089 secret admin@123 -shcluster_label shcluster1
